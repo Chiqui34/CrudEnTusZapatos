@@ -1,0 +1,52 @@
+<h1>{{tituloFormulario}}</h1>
+
+<form #diapositivaForm="ngForm" role="form" novalidate name="diapositivaForm">
+   <div class="form-group" *ngIf="!modoAlta">
+      <label for='id'>ID</label>
+      <input type="number" class="form-control" id="id" name="id" [(ngModel)]="diapositiva.id" disabled/>
+   </div>
+
+   <div class="form-group">
+      <label for='titulo'>Título</label>
+      <input type="text" class="form-control" id="titulo" name="titulo" #titulo="ngModel" [(ngModel)]="diapositiva.titulo" required/>
+
+      <!--VALIDACIÓN-->
+      <div *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)" class="alert">
+         <div *ngIf="titulo.errors!.required">
+            "Debes indicar un nombre para el título de la diapositiva."
+         </div>
+      </div>
+
+   </div>
+
+   <div class="form-group">
+      <label for='imagen'>Imagen</label>
+      <input type="file" class="form-control" id="imagen" name="imagen" (change)="procesarImagen($event)" />
+   </div>
+
+   <div class="form-group">
+      <label for='activo'>Activar</label>
+      <input class="form-check-input mt-0" type="checkbox" id="activo" name="activo" value="false" aria-label="Checkbox for following text input" [(ngModel)]="diapositiva.activo">
+      <!--<input type="checkbox" class="form-control" id="activo" name="activo" value="false" [(ngModel)]="diapositiva.activo"/>  -->
+   </div>
+</form>
+
+<pre>{{ diapositiva | json }}</pre>
+
+<!--PARA INCLUIRLO EN AÑADIR CATEGORIAS EN LOS ARTÍCULOS-->
+<!--<select id="IdCategoria" name="idCategoria" > [(ngModel)]="articulo!.idCategoria"
+   <option [ngValue]="null"></option>
+   <option 
+      *ngFor="let categoriaOption of categorias"> [ngValue]="categoriaOption.id === articulo!.idCategoria ? articulo!.idCategoria : categoriaOption"
+      {{ categoriaOption.nombre }}
+</option>
+</select>-->
+
+<!--<pre>{{ categorias | json }}</pre>-->
+
+<footer>
+   <a [routerLink]="['/lista-diapositivas']">
+      <button class="btn-secondary">Volver</button>
+   </a>
+   <button id="btnGuardar" [disabled]='diapositivaForm.form.invalid' (click)="guardar()" class="btn-primary">Guardar</button>
+</footer>

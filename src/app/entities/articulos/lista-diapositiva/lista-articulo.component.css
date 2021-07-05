@@ -1,0 +1,109 @@
+input {
+  width: 250px;
+}
+
+h1 {
+  padding-bottom: 30px;
+}
+
+table {
+  margin: 0 auto;
+  width: 85%;
+}
+
+td,
+th {
+  padding-left: 0px;
+  text-align: center;
+}
+
+#iconOk {
+  color: green;
+}
+
+#iconFalse {
+  color: red;
+}
+
+img {
+  width: 40px;
+  height: 30px;
+}
+
+td button {
+  margin-left: 5px;
+  border-radius: 5px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#botonBuscar {
+  margin-top: 15px;
+}
+
+.botonNuevo,
+.botonVolver {
+  text-align: right;
+}
+
+#btnNuevo,
+#btnVolver {
+  border: 0px;
+  height: 30px;
+  border-radius: 12px;
+  font-weight: bold;
+  color: white;
+  background-color: #00a2ff;
+}
+
+.botonNuevo {
+  width: 90.5%;
+  margin-bottom: 30px;
+}
+.btnNuevo {
+  background: green;
+  margin: 10px;
+  border: 2px solid green;
+}
+
+.botonVolver {
+  padding-top: 20px;
+  width: 11.2%;
+}
+
+.botoneraPaginación {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.btn:disabled {
+  background: grey;
+  border: 2px solid grey;
+}
+
+.btn {
+  background: green;
+  margin: 5px;
+  border: 2px solid green;
+}
+
+.containerFiltros {
+  width: 85%;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.containerFiltros h2 {
+  font-size: 14pt;
+  background-color: #333333;
+  color: white;
+  width: 200px;
+  padding-left: 20px;
+  border-radius: 8px;
+  margin-top: -33px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

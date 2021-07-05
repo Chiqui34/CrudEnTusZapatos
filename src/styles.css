@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+
+td,
+th {
+  padding-left: 0px;
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+}
+
+#btnGuardar:disabled {
+  background: silver;
+  border: 2px solid silver;
+}

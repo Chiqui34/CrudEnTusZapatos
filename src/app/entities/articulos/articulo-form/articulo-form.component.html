@@ -1,0 +1,55 @@
+<h1>{{tituloArticulo}}</h1>
+
+<form #articuloForm="ngForm" role="form" novalidate name="articuloForm">
+   <div class="form-group" *ngIf="!modoAlta">
+      <label for='id'>ID</label>
+      <input type="number" class="form-control" id="id" name="id" [(ngModel)]="articulo.id" disabled/>
+   </div>
+
+   <div class="form-group">
+      <label for='nombre'>Nombre</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" #nombre="ngModel" [(ngModel)]="articulo.nombre" required/>
+
+      <!--VALIDACIÓN-->
+      <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="alert">
+         <div *ngIf="nombre.errors!.required">
+            "Debes indicar un nombre para el artículo."
+         </div>
+      </div>
+   </div>
+
+   <div class="form-group">
+      <label for='imagen'>Imagen</label>
+      <input type="file" class="form-control" id="imagen" name="imagen" (change)="procesarImagen($event)" />
+   </div>
+
+   <div class="form-group">
+      <label for='activo' class='etiq-activo'>Activar</label>
+      <input class="form-check-input mt-0" type="checkbox" id="activo" name="activo" value="false" aria-label="Checkbox for following text input" [(ngModel)]="articulo.activo">
+   </div>
+
+   <div class="form-group">
+      <label for='IdCategoria'>Categoria:</label>
+         <select id="IdCategoria" name="idCategoria" [(ngModel)]="articulo!.idCategoria">
+            <!--[(ngModel)]="articulo!.idCategoria"-->
+            <option [ngValue]="null"></option>
+            <option *ngFor="let categoriaOption of categorias" [ngValue]="categoriaOption.id === articulo!.idCategoria ? articulo!.idCategoria : categoriaOption.id">
+               <!--[ngValue]="categoriaOption.id === articulo!.idCategoria ? articulo!.idCategoria : categoriaOption"-->
+               {{ categoriaOption.nombre}}
+            </option>
+         </select>
+   </div>
+   
+  <!--<pre>{{ categorias | json }}</pre>-->
+
+</form>
+
+<br>
+<pre>{{ articulo | json }}</pre>
+
+<footer>
+   <a [routerLink]="['/lista-articulos']">
+      <button class="btn-secondary">Volver</button>
+   </a>
+   <button id="btnGuardar" [disabled]='articuloForm.form.invalid' (click)="guardar()" class="btn-primary">Guardar</button>
+</footer>

@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg bg-light">
+   <div class="container-fluid">
+      <a class="navbar-brand">
+         <img class="logo" src="../../../assets/logo/logo.png"/>&nbsp;
+         CRUD-EnTusZapatos</a>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+         <ul class="navbar-nav">
+            <li class="nav-item">
+               <a class="nav-link active" aria-current="page" [routerLink]="['']" routerLinkActive="router-link-active">Home</a>
+            </li>&nbsp;
+            <li class="nav-item">
+               <a class="nav-link" [routerLink]="['/lista-diapositivas']" routerLinkActive="router-link-active" >Lista-Diapositivas</a>
+            </li>&nbsp;
+            <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Contenidos WEB
+               </a>
+               
+               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" [routerLink]="['/lista-articulos']" routerLinkActive="router-link-active" >Articulos</a></li>
+                     <li><a class="dropdown-item" [routerLink]="['/lista-diapositivas']" routerLinkActive="router-link-active" >Diapositivas</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/lista-categorias']" routerLinkActive="router-link-active" >Categorias</a></li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+   </div>
+</nav>

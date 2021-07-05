@@ -1,0 +1,30 @@
+<h1>{{tituloCategoria}}</h1>
+
+<form #categriaForm="ngForm" role="form" novalidate name="categriaForm">
+   <div class="form-group" *ngIf="!modoAlta">
+      <label for='id'>ID</label>
+      <input type="number" class="form-control" id="id" name="id" [(ngModel)]="categoria.id" disabled/>
+   </div>
+
+   <div class="form-group">
+      <label for='nombre'>Nombre</label>
+      <input type="text" class="form-control" id="titulo" name="titulo" #titulo="ngModel" [(ngModel)]="categoria.nombre" required/>
+
+      <!--VALIDACIÓN-->
+      <div *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)" class="alert">
+         <div *ngIf="titulo.errors!.required">
+            "Debes indicar un nombre para el título de la categoría."
+         </div>
+      </div>
+   </div>
+
+</form>
+
+<pre>{{ categoria | json }}</pre>
+
+<footer>
+   <a [routerLink]="['/lista-categorias']">
+      <button class="btn-secondary">Volver</button>
+   </a>
+   <button id="btnGuardar" (click)="guardar()" [disabled]='categriaForm.form.invalid' class="btn-primary">Guardar</button>
+</footer>

@@ -1,0 +1,12 @@
+.contenedor {
+  width: 100%;
+  height: calc(100% - 85px);
+  /* background: url(../../assets/fondo/fondo.jpg) no-repeat center center fixed; */
+  background-image: url(../../assets/fondo/fondo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  --webkit-background-size: cover;
+  --moz-background-size: cover;
+  --o-background-size: cover;
+  --background-size: cover;
+}

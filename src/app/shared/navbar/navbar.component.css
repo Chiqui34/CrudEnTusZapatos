@@ -1,0 +1,20 @@
+.navbar {
+  padding: 0px;
+}
+.container-fluid {
+  height: 85px;
+  background-color: #333333;
+}
+
+.container-fluid > .navbar-brand {
+  color: white;
+}
+
+.nav-item > .nav-link {
+  color: white;
+}
+
+img {
+  height: 80px;
+  width: 80px;
+}

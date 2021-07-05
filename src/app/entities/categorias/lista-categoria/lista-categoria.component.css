@@ -1,0 +1,54 @@
+h1 {
+  padding-bottom: 30px;
+}
+
+table {
+  margin: 0 auto;
+  width: 45%;
+}
+
+img {
+  width: 40px;
+  height: 30px;
+}
+
+td,
+th {
+  padding-left: 0px;
+  text-align: center;
+}
+
+td button {
+  margin-left: 5px;
+  border-radius: 5px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.pos-texto {
+  text-align: center;
+}
+
+.botonNuevo,
+.botonVolver {
+  text-align: right;
+}
+
+.botonNuevo {
+  width: 72.5%;
+}
+
+#btnNuevo,
+#btnVolver {
+  border: 0px;
+  height: 30px;
+  border-radius: 12px;
+  font-weight: bold;
+  color: white;
+  background-color: #00a2ff;
+}
+
+.botonVolver {
+  padding-top: 20px;
+  width: 31.2%;
+}
